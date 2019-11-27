@@ -64,7 +64,8 @@ public class ArbodeExpresiones {
 	String token;
 	//Nodo1 raiz = null;
         String cadToken="";
-	tokenizer = new StringTokenizer(expresion,operadores+operadores, true);
+      
+	tokenizer = new StringTokenizer(expresion,operadores,true);
 	while (tokenizer.hasMoreTokens()) {
 	    token = tokenizer.nextToken();
             //Imprime datos de la pila
@@ -74,6 +75,7 @@ public class ArbodeExpresiones {
 	    if (blanco.indexOf(token) >= 0) 
 		;               // Es un espacio en blanco, se ignora
 	    else if (operadores.indexOf(token) < 0) {
+                System.out.println(operadores.indexOf(token));
 		                // Es operando y lo guarda como nodo del arbol
                                 Nodo1 a;
 		pOperandos.push( new Nodo1(token));
